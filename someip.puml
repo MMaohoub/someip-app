@@ -1,0 +1,15 @@
+
+@startuml eventAppInit
+
+(*) -down-> "create_application"
+-down-> "app init"
+-down-> "register_state_handler"
+-down-> "register_message_handler"
+-down-> "register_availability_handler"
+-down-> "subscribe for events"
+-down->(*)
+
+@enduml
+
+
+

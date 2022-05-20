@@ -14,8 +14,11 @@ if (NOT ${VSOMEIP_NAME}_FOUND)
     message("${VSOMEIP_NAME} was not found. Please specify vsomeip_DIR")
 endif()
 
-add_executable (serverApp server.cpp)
-target_link_libraries(serverApp vsomeip3)
-add_dependencies(serverApp vsomeip3-cfg vsomeip3-sd)
+add_executable (server server.cpp)
 
-target_link_libraries(serverApp  ${VSOMEIP_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(server vsomeip3)
+
+add_dependencies(server vsomeip3-cfg vsomeip3-sd)
+
+target_link_libraries(server ${VSOMEIP_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
